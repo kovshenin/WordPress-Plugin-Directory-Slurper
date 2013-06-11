@@ -64,9 +64,10 @@ if ( $last_revision != $svn_last_revision ) {
 
 			exec( 'unzip -o -d themes ' . escapeshellarg( 'zips/' . $theme . '.zip' ) );
 			exec( 'rm -rf ' . escapeshellarg( 'zips/' . $theme . '.zip' ) );
-
+			
+			echo '... successfully updated.';
 		} else {
-			echo '... download failed.';
+			echo '... no stable version.';
 		}
 		echo "\r\n";
 	}
