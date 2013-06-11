@@ -1,12 +1,15 @@
-WordPress Plugin Directory Slurper
+WordPress Theme Directory Slurper
 ==================================
 
 A command line PHP script that downloads and updates a copy of the latest stable
-version of every plugin in the [WordPress.org plugin repository][repo].
+version of every theme in the [WordPress.org theme directory][repo].
 
-Really handy for doing local searches across all WordPress plugins.
+Really handy for doing local searches across all WordPress themes.
 
-[repo]: http://wordpress.org/extend/plugins/
+This is just an adapted version of Mark Jaquith's [Plugin Directory Slurper][pluginslurper].
+
+[repo]: http://wordpress.org/themes/
+[pluginslurper]: https://github.com/markjaquith/WordPress-Plugin-Directory-Slurper
 
 Requirements
 ------------
@@ -18,10 +21,10 @@ Requirements
 Instructions
 ------------
 
-1. `cd WordPress-Plugin-Directory-Slurper`
+1. `cd WordPress-Theme-Directory-Slurper`
 2. `./update`
 
-The `plugins/` directory will contain all the plugins, when the script is done.
+The `themes/` directory will contain all the themes, when the script is done.
 
 FAQ
 ----
@@ -31,9 +34,9 @@ FAQ
 An SVN checkout of the entire repository is a BEAST of a thing. You don't want it, 
 trust me. Updates and cleanups can take **hours** or even **days** to complete.
 
-### Why not just do an SVN export of each plugin's trunk? ###
+### Why not just do an SVN export of each theme's trunk? ###
 
-There is no guarantee that the plugin's trunk is the latest stable version. The 
+There is no guarantee that the theme's trunk is the latest stable version. The 
 repository supports doing development in trunk, and designating a branch or tag 
 as the stable version. Using the zip file gets around this, as it figures it all 
 out and gives you the latest stable version
@@ -42,8 +45,8 @@ out and gives you the latest stable version
 
 Your first update will take a while. You'd be well-advised to let it run overnight. 
 But subsequent updates are smart. The script tracks the SVN revision number of your
-latest update and then asks the Plugins Trac install for a list of plugins that have 
-changed since. Only those changed plugins are updated after the initial sync.
+latest update and then asks the Themes Trac install for a list of themes that have 
+changed since. Only those changed themes are updated after the initial sync.
 
 ### How much disk space do I need? ###
 
@@ -51,7 +54,7 @@ As of early 2013, it takes up about 4.1GB.
 
 ### Something went wrong, how do I do a partial update? ###
 
-The last successful update revision number is stored in `plugins/.last-revision`. 
+The last successful update revision number is stored in `themes/.last-revision`. 
 You can just overwrite that and the next `update` will start after that revision.
 
 Copyright & License
